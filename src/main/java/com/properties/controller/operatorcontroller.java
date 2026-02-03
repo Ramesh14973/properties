@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package com.properties.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.properties.component.celcomprop;
+import com.properties.component.maxissysprop;
+
+/**
+ * 
+*/
+@RestController
+//@RequestMapping("/getproperty")
+public class operatorcontroller {
+
+	  @Autowired
+	  private maxissysprop maxissysprop;
+	  
+	  @Autowired
+	  private celcomprop celprop;
+	  
+
+	//@PathVariable String Lip4maxis
+	@GetMapping("/getLip4maxis")
+	public String getLip4maxis() {
+		
+		System.out.println("Maxis IP  ----> : "+ maxissysprop.getLip4maxis());
+		
+		return maxissysprop.getLip4maxis();
+	} // End of getLip4maxis
+	
+	
+	@GetMapping("/getLip4celcom")
+	public String getLip4telco() {
+		
+		return celprop.getLip4telco();
+		
+	} // End of getLib4celcom
+	
+	
+} // End of propertycontroller
