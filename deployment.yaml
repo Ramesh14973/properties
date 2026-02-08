@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: propertiesservice
+  name: propertiesservice-v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: propertiesservice
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: propertiesservice
+    spec:
+      containers:
+      - image: rameshsubramani/messagespark:latest
+        name: propertiesservice-v1
+        ports:
+        - containerPort: 8085
