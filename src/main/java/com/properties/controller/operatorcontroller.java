@@ -38,6 +38,15 @@ public class operatorcontroller {
 	} // End of getLip4maxis
 	
 	
+	@GetMapping("/getLip4maxistelco")
+	public String getLip4maxistelco() {
+		
+		info("Local IP for Maxis GW Connection  ----> : "+ maxissysprop.getLip4telco());
+		
+		
+		return maxissysprop.getLip4telco();
+	} // End of getLip4maxis
+	
 	@GetMapping("/getLip4celcom")
 	public String getLip4telco() {
 		
